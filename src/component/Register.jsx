@@ -37,7 +37,7 @@ const Register = () => {
     <label htmlFor="terms">Accept our <a href="">Terms and Conditions</a></label>
 </div>
 <label>
-<input type="submit" className="btn w-full bg-[#ef5060e9] mt-8" value="Register"></input>
+<input type="submit" className="btn w-full bg-[#ed8d34] mt-8" value="Register"></input>
 </label>
             </form>
             {

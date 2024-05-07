@@ -26,7 +26,7 @@ const Login = () => {
     </span>
 </label>
 <label>
-<input type="submit" className="btn w-full bg-[#ef5060e9] mt-8" value="Login"></input>
+<input type="submit" className="btn w-full bg-[#ed8d34] mt-8" value="Login"></input>
 </label>
             </form>
             {

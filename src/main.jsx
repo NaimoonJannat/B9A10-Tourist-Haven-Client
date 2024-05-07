@@ -10,6 +10,9 @@ import Home from './component/Home';
 import ErrorPage from './component/ErrorPage';
 import Login from './component/Login';
 import Register from './component/Register';
+import AllSpots from './component/AllSpots';
+import AddSpot from './component/AddSpot';
+import MyList from './component/MyList';
 
  const router = createBrowserRouter([ 
   { 
@@ -20,6 +23,18 @@ import Register from './component/Register';
     {
       path:'/',
       element:<Home></Home>
+    },
+    {
+      path:'/allspots',
+      element: <AllSpots></AllSpots>
+    },
+    {
+      path:'/addspot',
+      element:<AddSpot></AddSpot>
+    },
+    {
+      path:'/mylist',
+      element:<MyList></MyList>
     },
     {
       path:'/login',
