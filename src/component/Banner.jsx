@@ -14,7 +14,7 @@ const Banner = () => {
             <h2 className="text-white text-center text-3xl md:text-5xl font-semibold">
               Explore With Us
             </h2>
-            <h2 className='text-[#ed8d34f1] text-center text-4xl md:text-7xl font-bold'>
+            <h2 className='text-[#ed8d34] text-center text-4xl md:text-7xl font-bold'>
             <Typewriter words={['Eiffel Tower','France']} loop={true} cursor={true} />
             </h2>
           </div>
@@ -35,7 +35,7 @@ const Banner = () => {
             <h2 className="text-white text-center text-3xl md:text-5xl font-semibold">
               Explore With Us
             </h2>
-            <h2 className='text-[#ed8d34f1] text-center text-4xl md:text-7xl font-bold'>
+            <h2 className='text-[#ed8d34] text-center text-4xl md:text-7xl font-bold'>
             <Typewriter words={['Louvre Museum','France']} loop={true} cursor={true} />
             </h2>
           </div>
@@ -57,7 +57,7 @@ const Banner = () => {
             <h2 className="text-white text-center text-3xl md:text-5xl font-semibold">
               Explore With Us
             </h2>
-            <h2 className='text-[#ed8d34f1] text-center text-4xl md:text-7xl font-bold'>
+            <h2 className='text-[#ed8d34] text-center text-4xl md:text-7xl font-bold'>
             <Typewriter words={['Sagrada Familia','Spain']} loop={true} cursor={true} />
             </h2>
           </div>
@@ -77,7 +77,7 @@ const Banner = () => {
             <h2 className="text-white text-center text-3xl md:text-5xl font-semibold">
               Explore With Us
             </h2>
-            <h2 className='text-[#ed8d34f1] text-center text-4xl md:text-7xl font-bold'>
+            <h2 className='text-[#ed8d34] text-center text-4xl md:text-7xl font-bold'>
             <Typewriter words={['Venice Canals','Italy']} loop={true} cursor={true} />
             </h2>
           </div>
