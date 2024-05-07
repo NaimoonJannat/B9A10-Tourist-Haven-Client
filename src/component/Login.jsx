@@ -8,7 +8,7 @@ const Login = () => {
     const emailRef= useRef(null);
   
     return (
-        <div className="w-2/3 mx-auto text-center space-y-8">
+        <div className="w-1/3 mx-auto text-center space-y-8">
             <h1 className="text-2xl font-bold">Please Login</h1>
             <form className="space-y-8">
             <label className="input input-bordered flex items-center gap-2">
