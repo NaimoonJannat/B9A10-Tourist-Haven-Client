@@ -59,7 +59,7 @@ const Review = () => {
 				<p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">Yes, Tourist Haven offers group tour packages for travelers who prefer to explore destinations with a group of like-minded individuals. </p>
 			</details>
 			<details className="w-full border rounded-lg">
-				<summary className="px-4 py-6">What languages are spoken by Tourist Haven\'s customer service team?</summary>
+				<summary className="px-4 py-6">What languages are spoken by Tourist Haven&apos;s customer service team?</summary>
 				<p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">Tourist Haven&apos;s customer service team is multilingual and can assist you in several languages, including English, Spanish, French, and Mandarin. </p>
 			</details>
 			<details className="w-full border rounded-lg">
