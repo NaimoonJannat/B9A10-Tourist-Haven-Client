@@ -13,6 +13,7 @@ import Register from './component/Register';
 import AllSpots from './component/AllSpots';
 import AddSpot from './component/AddSpot';
 import MyList from './component/MyList';
+import AuthProvider from './providers/AuthProvider';
 
  const router = createBrowserRouter([ 
   { 
@@ -50,6 +51,8 @@ import MyList from './component/MyList';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+     <AuthProvider>
+      <RouterProvider router={router} />
+      </AuthProvider>
   </React.StrictMode>,
 )

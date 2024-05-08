@@ -1,17 +1,59 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
     const[registerError, setRegisterError]=useState('');
     const[registerSuccess, setRegisterSuccess]=useState('');
     const[showPass, setShowPass]=useState(false);
+    const {createUser} = useContext(AuthContext);
+    
+    const handleRegister = e =>{
+        e.preventDefault();
+        const name=e.target.name.value;
+        const email=e.target.email.value;
+        const photo=e.target.url.value;
+        const password=e.target.password.value;
+        const accepted = e.target.terms.checked;
+       console.log(name, email, photo, password);
 
+        if(password.length<6){
+            setRegisterError('Password should be at least 6 characters');
+            return;
+        }
+        else if(!/[A-Z]/.test(password)){
+            setRegisterError('Your password should have at least one uppercase character')
+            return;
+        }
+        else if(!/[a-z]/.test(password)){
+            setRegisterError('Your password should have at least one lowercase character')
+            return;
+        }
+        
+        else if(!accepted){
+            setRegisterError('Please accept our terms and conditions');
+            return;
+        }
+
+        // reset error 
+        setRegisterError('');
+        setRegisterSuccess('');
+
+        // create user 
+        createUser(email, password)
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            console.error(error)
+        })
+    }
 
     return (
         <div className="w-1/3 mx-auto text-center space-y-8">
             <h1 className="text-2xl font-bold">Register Please</h1>
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleRegister}>
             <label className="input input-bordered flex items-center gap-2">
   <input type="text" name="name" className="grow" placeholder="Your Name" required />
 </label>
