@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
@@ -9,6 +9,8 @@ const Register = () => {
     const[registerSuccess, setRegisterSuccess]=useState('');
     const[showPass, setShowPass]=useState(false);
     const {createUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     
     const handleRegister = e =>{
         e.preventDefault();
@@ -42,11 +44,12 @@ const Register = () => {
         setRegisterSuccess('');
 
         // create user 
-        createUser(email, password)
-        .then(result =>{
-            console.log(result.user);
+        createUser(name, email, photo, password)
+        .then(() =>{
+            // console.log(result.user);
             setRegisterSuccess('Registered Successfully!');
-            toast.success("Account Registered Successfully!")
+            toast.success("Account Registered Successfully!");
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error =>{
             console.error(error);

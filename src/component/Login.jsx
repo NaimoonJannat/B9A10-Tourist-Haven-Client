@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+
 const Login = () => {
     const[loginError, setLoginError]=useState('');
     const[loginSuccess, setLoginSuccess]=useState('');
     const[showPass, setShowPass]=useState(false);
     const emailRef= useRef(null);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const {signIn, signInGoogle, signInGithub} = useContext(AuthContext);
 
@@ -17,7 +20,9 @@ const Login = () => {
             const user = result.user;
             toast.success("Logged In Successfully!")
             console.log(user);
-            console.log(user.photoURL);
+            // navigate after login 
+            navigate(location?.state ? location.state : '/')
+            // console.log(user.photoURL);
 
         })
         .catch(error =>{
@@ -32,7 +37,9 @@ const Login = () => {
             const user = result.user;
             toast.success("Logged In Successfully!")
             console.log(user);
-            console.log(user.photoURL);
+             // navigate after login 
+             navigate(location?.state ? location.state : '/')
+            // console.log(user.photoURL);
 
         })
         .catch(error =>{
@@ -54,6 +61,9 @@ const Login = () => {
             signIn(email, password)
             .then(result =>{
                 console.log(result.user);
+                 // navigate after login 
+            navigate(location?.state ? location.state : '/')
+            
                 {setLoginSuccess('Logged in successfully!');
                 
         }
