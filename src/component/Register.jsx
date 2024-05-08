@@ -46,7 +46,6 @@ const Register = () => {
         // create user 
         createUser(name, email, photo, password)
         .then(() =>{
-            // console.log(result.user);
             setRegisterSuccess('Registered Successfully!');
             toast.success("Account Registered Successfully!");
             navigate(location?.state ? location.state : '/')
