@@ -1,21 +1,38 @@
 import { Link } from "react-router-dom";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 const Login = () => {
     const[loginError, setLoginError]=useState('');
     const[loginSuccess, setLoginSuccess]=useState('');
     const[showPass, setShowPass]=useState(false);
     const emailRef= useRef(null);
+
+    const {signIn} = useContext(AuthContext);
   
     const handleLogin = e =>{
         e.preventDefault();
             const email=e.target.email.value;
             const password=e.target.password.value;
             console.log(email, password);
-    
+
             // reset error 
             setLoginError('');
             setLoginSuccess('');
+
+            signIn(email, password)
+            .then(result =>{
+                console.log(result.user);
+                {setLoginSuccess('Logged in successfully!');
+                
+        }
+            })
+            .catch(error =>{
+                console.error(error);
+                setLoginError(error.message);
+            })
+
+            
     }
     return (
         <div className="w-full md:w-2/3 lg:w-1/2 mx-auto text-center space-y-8">
