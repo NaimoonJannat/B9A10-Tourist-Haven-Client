@@ -44,9 +44,11 @@ const Register = () => {
         createUser(email, password)
         .then(result =>{
             console.log(result.user);
+            setRegisterSuccess('Registered Successfully!');
         })
         .catch(error =>{
-            console.error(error)
+            console.error(error);
+            setRegisterError(error.message);
         })
     }
 

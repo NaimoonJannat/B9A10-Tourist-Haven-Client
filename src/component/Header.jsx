@@ -25,16 +25,13 @@ const Header = () => {
         <li><NavLink to="/register" className={({ isActive }) =>
                       isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
                                }>Register</NavLink></li>
-        <li><NavLink to="/login" className={({ isActive }) =>
-                      isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
-                               }>Login</NavLink></li> 
       </ul>
     </div>
     <div>
     <a className="btn btn-ghost text-2xl font-bold text-[#3c97d0]">Tourist <span className="text-[#ed8d34]">Haven</span></a>
     </div>
   </div>
-  <div className="navbar-end hidden lg:flex">
+  <div className=" hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
     <li><NavLink to="/" className={({ isActive }) =>
                       isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
@@ -51,10 +48,15 @@ const Header = () => {
         <li><NavLink to="/register" className={({ isActive }) =>
                       isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
                                }>Register</NavLink></li>
-        <li><NavLink to="/login" className={({ isActive }) =>
-                      isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
-                               }>Login</NavLink></li>  
+         
     </ul>
+  </div>
+  <div className="flex">
+  <ul className="menu menu-horizontal px-1">
+  <li><NavLink to="/login" className={({ isActive }) =>
+                      isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
+                               }>Login</NavLink></li>
+  </ul>
   </div>
 </div>
     );
