@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip'
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -163,27 +165,29 @@ const Header = () => {
            
           </ul>
         </div>
+
         <div className="flex">
           {user ? (
-            <div className="flex">
+            <div>
               <NavLink
             to="/register"
-            className={({ isActive }) =>
-              isActive
-                ? "text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34] hidden"
-                : "font-bold text-[#3c97d0] hidden"
-            }
+            className="hidden"
           >
             Register
           </NavLink>
-              <div
+             <div className="flex">
+             <div
                 tabIndex={0}
                 role="button"
-                className="avatar btn btn-circle btn-ghost"
+                className="avatar btn btn-circle btn-ghost" 
               >
-                <div className="w-10 rounded-full">
-                  <img src={user.photoURL} />
+                <div className="w-10 rounded-full"   data-tooltip-id="my-tooltip"
+                data-tooltip-content={user.displayName}
+                data-tooltip-place="bottom">
+                  <img src={user.photoURL}/>
+                  <Tooltip id="my-tooltip" />
                 </div>
+               
               </div>
               <button
                 onClick={handleSignOut}
@@ -192,8 +196,11 @@ const Header = () => {
                 Logout
               </button>
             </div>
+             </div>
           ) : (
-           <div className="flex justify-center items-center gap-4">
+           <div className="flex">
+            <ul className="menu menu-horizontal px-1">
+             <li>
              <NavLink
             to="/register"
             className={({ isActive }) =>
@@ -204,7 +211,9 @@ const Header = () => {
           >
             Register
           </NavLink>
-              <NavLink
+             </li>
+             <li>
+             <NavLink
               to="/login"
               className={({ isActive }) =>
                 isActive
@@ -214,6 +223,8 @@ const Header = () => {
             >
               Login
             </NavLink>
+             </li>
+           </ul>
            </div>
           )}
         </div>
