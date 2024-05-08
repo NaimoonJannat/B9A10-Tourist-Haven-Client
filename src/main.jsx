@@ -14,6 +14,9 @@ import AllSpots from './component/AllSpots';
 import AddSpot from './component/AddSpot';
 import MyList from './component/MyList';
 import AuthProvider from './providers/AuthProvider';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 
  const router = createBrowserRouter([ 
   { 
@@ -53,6 +56,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
      <AuthProvider>
       <RouterProvider router={router} />
+      <ToastContainer />
       </AuthProvider>
   </React.StrictMode>,
 )

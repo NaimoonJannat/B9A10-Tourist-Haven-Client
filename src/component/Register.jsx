@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
     const[registerError, setRegisterError]=useState('');
@@ -45,10 +46,12 @@ const Register = () => {
         .then(result =>{
             console.log(result.user);
             setRegisterSuccess('Registered Successfully!');
+            toast.success("Account Registered Successfully!")
         })
         .catch(error =>{
             console.error(error);
             setRegisterError(error.message);
+            toast.error("There was an error! Please try again later.");
         })
     }
 
