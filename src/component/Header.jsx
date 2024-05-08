@@ -1,9 +1,18 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+    const handleSignOut = () =>{
+      logOut()
+      .then()
+      .catch()
+    }
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 my-6">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,10 +37,11 @@ const Header = () => {
       </ul>
     </div>
     <div>
-    <a className="btn btn-ghost text-2xl font-bold text-[#3c97d0]">Tourist <span className="text-[#ed8d34]">Haven</span></a>
+    <div className="btn btn-ghost text-2xl font-bold text-[#3c97d0]">Tourist <span className="text-[#ed8d34]">Haven</span></div>
     </div>
   </div>
-  <div className=" hidden lg:flex">
+  <div className="navbar-end">
+  <div className="hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
     <li><NavLink to="/" className={({ isActive }) =>
                       isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
@@ -52,11 +62,25 @@ const Header = () => {
     </ul>
   </div>
   <div className="flex">
-  <ul className="menu menu-horizontal px-1">
-  <li><NavLink to="/login" className={({ isActive }) =>
-                      isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
-                               }>Login</NavLink></li>
-  </ul>
+  {
+    user ? 
+    <div className="flex">
+       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+    <div className="w-10 rounded-full">
+      <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+    </div>
+  </div>
+  <button onClick={handleSignOut} className="text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]">Logout</button>
+  </div>
+    
+    :
+    <NavLink to="/login" className={({ isActive }) =>
+      isActive ? 'text-white btn font-bold bg-[#ed8d34] border-2 border-[#ed8d34]' : 'font-bold text-[#3c97d0]'
+               }>Login</NavLink>
+  }
+  
+  
+  </div>
   </div>
 </div>
     );

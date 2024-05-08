@@ -18,7 +18,7 @@ const Login = () => {
             setLoginSuccess('');
     }
     return (
-        <div className="w-1/3 mx-auto text-center space-y-8">
+        <div className="w-full md:w-2/3 lg:w-1/2 mx-auto text-center space-y-8">
             <h1 className="text-2xl font-bold">Please Login</h1>
             <form className="space-y-8" onSubmit={handleLogin}>
             <label className="input input-bordered flex items-center gap-2">
