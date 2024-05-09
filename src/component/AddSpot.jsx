@@ -25,7 +25,7 @@ const AddSpot = () => {
         console.log(newSpot);
 
         // send data to the server 
-        fetch('http://localhost:3000/spots',{
+        fetch('https://b9a10-tourist-haven-server.vercel.app/spots',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

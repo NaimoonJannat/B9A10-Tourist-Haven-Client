@@ -13,7 +13,7 @@ const MyList = () => {
     }, []); 
 
     const fetchPlaces = () => {
-        fetch('http://localhost:3000/spots')
+        fetch('https://b9a10-tourist-haven-server.vercel.app/spots')
             .then(res => res.json())
             .then(data => setPlaces(data))
             .catch(error => console.log("Error fetching spots:", error));
@@ -31,7 +31,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/spots/${_id}`, {
+                fetch(`https://b9a10-tourist-haven-server.vercel.app/spots/${_id}`, {
                     method: 'DELETE',
                 })
                 .then(res => res.json())

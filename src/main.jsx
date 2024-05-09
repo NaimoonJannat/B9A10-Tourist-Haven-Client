@@ -30,12 +30,12 @@ import UpdateSpot from './component/UpdateSpot';
     {
       path:'/',
       element:<Home></Home>,
-      loader: () => fetch('http://localhost:3000/spots')
+      loader: () => fetch('https://b9a10-tourist-haven-server.vercel.app/spots')
     },
     {
       path:'/allspots',
       element: <AllSpots></AllSpots>,
-      loader: () => fetch('http://localhost:3000/spots')
+      loader: () => fetch('https://b9a10-tourist-haven-server.vercel.app/spots')
     },
     {
       path:'/addspot',
@@ -44,12 +44,12 @@ import UpdateSpot from './component/UpdateSpot';
     {
       path:'/mylist',
       element:<PrivateRoute><MyList></MyList></PrivateRoute>,
-      loader: () => fetch('http://localhost:3000/spots')
+      loader: () => fetch('https://b9a10-tourist-haven-server.vercel.app/spots')
     },
     {
       path: "/mylist/updatespot/:id", 
       element: <PrivateRoute><UpdateSpot></UpdateSpot></PrivateRoute>,
-      loader: ({params})=>fetch(`http://localhost:3000/spots/${params.id}`)
+      loader: ({params})=>fetch(`https://b9a10-tourist-haven-server.vercel.app/spots/${params.id}`)
     },
     {
       path:'/login',
@@ -62,7 +62,7 @@ import UpdateSpot from './component/UpdateSpot';
     {
       path: "/spot/:id",
       element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-      loader: () => fetch('http://localhost:3000/spots')
+      loader: () => fetch('http://b9a10-tourist-haven-server.vercel.app/spots')
     }
   ]
   }, 
