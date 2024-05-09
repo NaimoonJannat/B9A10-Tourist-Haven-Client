@@ -26,7 +26,8 @@ import { ToastContainer } from 'react-toastify';
   children: [
     {
       path:'/',
-      element:<Home></Home>
+      element:<Home></Home>,
+      loader: () => fetch('http://localhost:3000/spots')
     },
     {
       path:'/allspots',
