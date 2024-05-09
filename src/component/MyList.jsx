@@ -11,7 +11,7 @@ const MyList = () => {
     useEffect(() => {
         fetchPlaces();
     }, []); 
-    
+
     const fetchPlaces = () => {
         fetch('http://localhost:3000/spots')
             .then(res => res.json())
@@ -94,14 +94,15 @@ const MyList = () => {
                                 <td className="p-3 text-right">
                                     <div className="px-3 flex flex-col md:flex-row gap-2 py-1 font-semibold">
                                         <button onClick={() => handleDelete(spot._id)} className="btn btn-circle text-red-600 text-lg p-2"><MdDelete /></button>
-                                        <div className="btn btn-circle text-black text-lg p-2"><MdOutlineEdit/></div>
+                                        <Link to={`/mylist/updatespot/${spot._id}`}><div className="btn btn-circle text-black text-lg p-2"><MdOutlineEdit/></div></Link>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr>  
                         ))}
                     </tbody>
                 </table>
             </div>
+            
         </div>
     );
 };
