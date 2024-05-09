@@ -16,6 +16,7 @@ import MyList from './component/MyList';
 import AuthProvider from './providers/AuthProvider';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import SpotDetails from './component/SpotDetails';
 
 
  const router = createBrowserRouter([ 
@@ -49,6 +50,11 @@ import { ToastContainer } from 'react-toastify';
     {
       path:'/register',
       element:<Register></Register>,
+    },
+    {
+      path: "/spot/:id",
+      element: <SpotDetails></SpotDetails>,
+      loader: () => fetch('http://localhost:3000/spots')
     }
   ]
   }, 

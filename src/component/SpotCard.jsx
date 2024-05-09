@@ -2,9 +2,10 @@ import { FaEuroSign } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 import { IoTimerOutline } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const SpotCard = ({spot}) => {
 
-    const {name, country, visitors, cost, time, seasonality, photo} = spot;
+    const {name, _id, country, visitors, cost, time, seasonality, photo} = spot;
     return (
         <div className="flex flex-col max-w-lg p-6 space-y-6 border-2 border-[#ed8d34] overflow-hidden rounded-lg shadow-xl dark:bg-gray-50 dark:text-gray-800">
 	
@@ -30,7 +31,7 @@ const SpotCard = ({spot}) => {
             <h2>{time}</h2>
             </div>
         </div>
-        <button className="btn w-full bg-[#3c97d0] mt-8">View Details <FaArrowRight /></button>
+        <Link to={`/spot/${_id}`}><button className="btn w-full bg-[#3c97d0] mt-8">View Details <FaArrowRight /></button></Link>
 	</div>
 	
 </div>
