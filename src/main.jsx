@@ -62,7 +62,7 @@ import UpdateSpot from './component/UpdateSpot';
     {
       path: "/spot/:id",
       element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-      loader: () => fetch('http://b9a10-tourist-haven-server.vercel.app/spots')
+      loader: () => fetch('https://b9a10-tourist-haven-server.vercel.app/spots')
     }
   ]
   }, 
