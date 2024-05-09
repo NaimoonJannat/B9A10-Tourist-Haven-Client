@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 const Blog = () => {
     return (
         <section className="p-4 lg:p-8 dark:bg-gray-100 dark:text-gray-800">
-            <h2 className="text-4xl font-bold text-center my-8">Our Tourist&apos;s <span className="text-[#3c97d0]">Experiences</span></h2>
+            <h2 className="text-4xl font-bold text-center my-8">Our Tourist&apos;s <span className="text-[#ed8d34]">Experiences</span></h2>
 	<div className="container mx-auto space-y-12">
 		<Fade cascade>
         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">

@@ -6,7 +6,7 @@ const SpotCard = ({spot}) => {
 
     const {name, country, visitors, cost, time, seasonality, photo} = spot;
     return (
-        <div className="flex flex-col max-w-lg p-6 space-y-6 border-2 border-[#3c97d0] overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800">
+        <div className="flex flex-col max-w-lg p-6 space-y-6 border-2 border-[#ed8d34] overflow-hidden rounded-lg shadow-xl dark:bg-gray-50 dark:text-gray-800">
 	
 	<div>
 		<img src={photo} alt="" className="object-cover w-full mb-4 h-50 sm:h-96 dark:bg-gray-500" />
@@ -30,7 +30,7 @@ const SpotCard = ({spot}) => {
             <h2>{time}</h2>
             </div>
         </div>
-        <button className="btn w-full bg-[#ed8d34] mt-8">View Details <FaArrowRight /></button>
+        <button className="btn w-full bg-[#3c97d0] mt-8">View Details <FaArrowRight /></button>
 	</div>
 	
 </div>

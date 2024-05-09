@@ -107,7 +107,7 @@ const Header = () => {
         </div>
         <div className="flex flex-row justify-center items-center">
         <img className="w-8 md:w-12 hidden md:flex" src="https://i.ibb.co/z23B3dm/logo.png" alt=""  />
-          <div className="text-2xl font-bold text-[#3c97d0]">
+          <div className="text-2xl font-playfair font-bold text-[#3c97d0]">
             Tourist <span className="text-[#ed8d34]">Haven</span>
           </div>
         </div>
