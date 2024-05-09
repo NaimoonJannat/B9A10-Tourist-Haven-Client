@@ -30,7 +30,7 @@ import UpdateSpot from './component/UpdateSpot';
     {
       path:'/',
       element:<Home></Home>,
-      loader: () => fetch('https://b9a10-tourist-haven-server.vercel.app/spots')
+      loader: () => fetch('https://b9a10-tourist-haven-server.vercel.app/spots'),
     },
     {
       path:'/allspots',

@@ -23,6 +23,7 @@ const Home = () => {
         }
         </div>
           </div>
+          
           <Blog></Blog>
           <Gallary></Gallary>
           <Review></Review>
