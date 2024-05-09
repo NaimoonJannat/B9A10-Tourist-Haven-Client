@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const AddSpot = () => {
+    const { user } = useContext(AuthContext);
     const handleAddSpot = event =>{
         event.preventDefault();
         const form = event.target;
@@ -98,11 +101,11 @@ const AddSpot = () => {
                 {/* sixth row  */}
                 <div className="col-span-full sm:col-span-3">
 					<label className="text-base">Username</label>
-					<input type="text" name="username" disabled value="Naimoon Jannat" placeholder="Username" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+					<input type="text" name="username" disabled value={user.displayName} placeholder="Username" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
 				</div>
                 <div className="col-span-full sm:col-span-3">
 					<label className="text-base">Email</label>
-					<input type="email" name="email" disabled value="naimoonjannat@gmail.com" placeholder="Email" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+					<input type="email" name="email" disabled value={user.email} placeholder="Email" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
 				</div>
                 <div className="col-span-full">
 <input type="submit" className="btn w-full bg-[#ed8d34] mt-8" value="Add"></input>

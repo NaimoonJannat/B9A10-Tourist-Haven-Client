@@ -42,7 +42,8 @@ import PrivateRoute from './PrivateRoute';
     },
     {
       path:'/mylist',
-      element:<PrivateRoute><MyList></MyList></PrivateRoute>
+      element:<PrivateRoute><MyList></MyList></PrivateRoute>,
+      loader: () => fetch('http://localhost:3000/spots')
     },
     {
       path:'/login',

@@ -21,7 +21,7 @@ const Login = () => {
             toast.success("Logged In Successfully!")
             console.log(user);
             // navigate after login 
-            navigate(location?.state ? location.state : '/')
+            navigate(location?.state ? location.state : '/');
             // console.log(user.photoURL);
 
         })

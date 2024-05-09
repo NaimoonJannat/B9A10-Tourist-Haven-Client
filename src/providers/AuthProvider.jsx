@@ -12,10 +12,13 @@ const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     const provider = new GoogleAuthProvider();
     const providerGit = new GithubAuthProvider();
 
     const createUser = (name, email, photo, password) => {
+        setLoading(true);
         // Create user
         return createUserWithEmailAndPassword(auth, email, password)
             .then(userCredential => {
@@ -39,18 +42,22 @@ const AuthProvider = ({children}) => {
     
     
     const signInGoogle = () =>{
+        setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
     const signInGithub = () =>{
+        setLoading(true);
         return signInWithPopup(auth, providerGit);
     }
 
     const signIn = (email, password) =>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
 
@@ -59,6 +66,7 @@ const AuthProvider = ({children}) => {
         onAuthStateChanged(auth, currentUser=>{
             console.log('user in the change', currentUser);
             setUser(currentUser);
+            setLoading(false);
         });
         return () => {
             unSubscribe();
@@ -66,6 +74,7 @@ const AuthProvider = ({children}) => {
     },[])
     const authInfo ={
         user, 
+        loading,
         createUser,
         logOut,
         signIn,
