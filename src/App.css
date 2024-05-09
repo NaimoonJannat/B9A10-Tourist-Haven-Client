@@ -1,0 +1,12 @@
+/* Night theme styles */
+body {
+    background-color: #000000; /* Set your desired background color for the night theme */
+    color: #ffffff; /* Set your desired text color for the night theme */
+    /* Add other night theme styles */
+}
+/* Day theme styles */
+body {
+    background-color: #ffffff; /* Set your desired background color for the day theme */
+    color: #000000; /* Set your desired text color for the day theme */
+    /* Add other day theme styles */
+}
