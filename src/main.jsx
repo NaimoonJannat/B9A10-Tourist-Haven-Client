@@ -30,7 +30,8 @@ import { ToastContainer } from 'react-toastify';
     },
     {
       path:'/allspots',
-      element: <AllSpots></AllSpots>
+      element: <AllSpots></AllSpots>,
+      loader: () => fetch('http://localhost:3000/spots')
     },
     {
       path:'/addspot',

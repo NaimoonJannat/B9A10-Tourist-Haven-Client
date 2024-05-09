@@ -37,7 +37,7 @@ const AddSpot = () => {
                     title: "Success!",
                     text: "Spot Added Successfully",
                     icon: "success",
-                    confirmButtonText: 'cool'
+                    confirmButtonText: 'Ok'
                   });
                   form.reset();
             
@@ -75,7 +75,7 @@ const AddSpot = () => {
   {/* third row  */}
 				<div className="col-span-full sm:col-span-2">
 					<label className="text-base">Average Cost</label>
-					<input type="text" name="cost" placeholder="Average Cost" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+					<input type="number" name="cost" placeholder="Average Cost" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
 				</div>
 				<div className="col-span-full sm:col-span-2">
 					<label className="text-base">Travel Time</label>
