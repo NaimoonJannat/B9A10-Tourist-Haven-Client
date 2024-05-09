@@ -17,6 +17,7 @@ import AuthProvider from './providers/AuthProvider';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import SpotDetails from './component/SpotDetails';
+import PrivateRoute from './PrivateRoute';
 
 
  const router = createBrowserRouter([ 
@@ -37,11 +38,11 @@ import SpotDetails from './component/SpotDetails';
     },
     {
       path:'/addspot',
-      element:<AddSpot></AddSpot>
+      element:<PrivateRoute><AddSpot></AddSpot></PrivateRoute>
     },
     {
       path:'/mylist',
-      element:<MyList></MyList>
+      element:<PrivateRoute><MyList></MyList></PrivateRoute>
     },
     {
       path:'/login',
@@ -53,7 +54,7 @@ import SpotDetails from './component/SpotDetails';
     },
     {
       path: "/spot/:id",
-      element: <SpotDetails></SpotDetails>,
+      element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
       loader: () => fetch('http://localhost:3000/spots')
     }
   ]
