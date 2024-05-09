@@ -1,7 +1,47 @@
+import Swal from "sweetalert2";
 
 const AddSpot = () => {
-    const handleAddSpot = () =>{
+    const handleAddSpot = event =>{
+        event.preventDefault();
+        const form = event.target;
 
+        const name=form.name.value;
+        const country=form.country.value;
+        const location=form.location.value;
+        const cost=form.cost.value;
+        const seasonality=form.seasonality.value;
+        const time=form.time.value;
+        const visitors=form.visitors.value;
+        const description=form.description.value;
+        const photo=form.photo.value;
+        const username=form.username.value;
+        const email=form.email.value;
+
+
+        const newSpot = {name, email, country, username, description, visitors, location, cost, time, seasonality, photo}
+        console.log(newSpot);
+
+        // send data to the server 
+        fetch('http://localhost:3000/spots',{
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newSpot)
+
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            Swal.fire({
+                    title: "Success!",
+                    text: "Spot Added Successfully",
+                    icon: "success",
+                    confirmButtonText: 'cool'
+                  });
+                  form.reset();
+            
+        })
     }
 
     return (
@@ -58,11 +98,11 @@ const AddSpot = () => {
                 {/* sixth row  */}
                 <div className="col-span-full sm:col-span-3">
 					<label className="text-base">Username</label>
-					<input type="text" name="username" placeholder="Username" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+					<input type="text" name="username" disabled value="Naimoon Jannat" placeholder="Username" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
 				</div>
                 <div className="col-span-full sm:col-span-3">
 					<label className="text-base">Email</label>
-					<input type="email" name="email" placeholder="Email" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+					<input type="email" name="email" disabled value="naimoonjannat@gmail.com" placeholder="Email" className="w-full p-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
 				</div>
                 <div className="col-span-full">
 <input type="submit" className="btn w-full bg-[#ed8d34] mt-8" value="Add"></input>
