@@ -30,7 +30,28 @@ import UpdateSpot from './component/UpdateSpot';
     {
       path:'/',
       element:<Home></Home>,
-      loader: () => fetch('https://b9a10-tourist-haven-server.vercel.app/spots'),
+      loader: async () => {
+        try {
+            // Fetch data from the first link
+            const spotsResponse = await fetch("https://b9a10-tourist-haven-server.vercel.app/spots");
+            const spotsData = await spotsResponse.json();
+
+            // Fetch data from the second link
+            const countriesResponse = await fetch("https://b9a10-tourist-haven-server.vercel.app/countries");
+            const countriesData = await countriesResponse.json();
+
+            // Combine the data into an object
+            const combinedData = {
+                spots: spotsData,
+                countries: countriesData
+            };
+
+            return combinedData;
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            throw error; // Propagate the error
+        }
+    }
     },
     {
       path:'/allspots',

@@ -14,6 +14,7 @@ const Header = () => {
       const localTheme = localStorage.getItem('theme')
     document.querySelector('html').setAttribute('data-theme',localTheme)
     },[theme])
+    
     const handleSignOut = () => {
     logOut()
       .then((result) => {

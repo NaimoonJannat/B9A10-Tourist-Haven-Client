@@ -7,7 +7,6 @@ const AddSpot = () => {
     const handleAddSpot = event =>{
         event.preventDefault();
         const form = event.target;
-
         const name=form.name.value;
         const country=form.country.value;
         const location=form.location.value;
